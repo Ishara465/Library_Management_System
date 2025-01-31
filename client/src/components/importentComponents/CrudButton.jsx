@@ -10,18 +10,9 @@ const CrudButton = () => {
         <Link to="/bookList" className="btn btn-primary">
           View List Of Books
         </Link>
-
         <Button as={Link} to="/books" variant="outline-primary">
-          Add
-        </Button>
-
-        <Button as={Link} to="#" variant="outline-primary">
-          Update
-        </Button>
-
-        <Button as={Link} to="#" variant="outline-primary">
-          Delete
-        </Button>
+          Add Books
+        </Button>     
       </ButtonGroup>
     </div>
   );
