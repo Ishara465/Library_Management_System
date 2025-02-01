@@ -4,6 +4,7 @@ import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
 import { Container } from "react-bootstrap";
 
+
 const BookInfo = () => {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -25,6 +26,8 @@ const BookInfo = () => {
 
             {/* Content */}
             <div>
+
+              <h1 className="text-center text-decoration-underline">Book Info</h1>
               <div className="container mt-3">
                 <Table striped bordered hover variant="dark">
                   <tbody>

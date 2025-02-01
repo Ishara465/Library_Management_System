@@ -5,6 +5,9 @@ import Table from "react-bootstrap/Table";
 import MemberCrudButton from "./MemberCrudButton";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 
 const MemberInfo = () => {
   return (
@@ -20,7 +23,28 @@ const MemberInfo = () => {
           >
             <div className="d-flex justify-content-center">
               <MemberCrudButton />
+              {/* Search bar */}
+            <div className="d-flex ms-auto">
+            <Form inline >
+                <Row>
+                  <Col xs="auto">
+                    <Form.Control
+                      type="text"
+                      placeholder="Search Member"
+                      className=" mr-sm-2"
+                    />
+                  </Col>
+                  <Col xs="auto">
+                    <Button type="submit" variant="outline-primary">Submit</Button>
+                  </Col>
+                </Row>
+              </Form>
             </div>
+            </div>
+
+
+
+
             <div className="row  d-flex justify-content-center  m-2">
               {/* Home Body */}
               <h1 className="text-center mb-3">Member Info</h1>

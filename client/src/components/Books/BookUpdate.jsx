@@ -30,7 +30,7 @@ const BookUpdate = () => {
 
               <br />
             </div>
-            <h1 className="text-center">Update Book</h1>
+            <h1 className="text-center text-decoration-underline">Update Book</h1>
 
             <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">

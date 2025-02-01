@@ -24,7 +24,7 @@ const Books = () => {
               <CrudButton />
               <br />
             </div>
-            <h1 className="text-center">Add Book</h1>
+            <h1 className="text-center text-decoration-underline">Add Book</h1>
             <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
               <Form.Control type="text" placeholder="Book ID" />
