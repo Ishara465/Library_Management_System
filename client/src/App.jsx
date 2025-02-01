@@ -8,6 +8,10 @@ import BookList from "./components/Books/BookList";
 import CrudButton from "./components/importentComponents/CrudButton";
 import SideNavigation from "./components/importentComponents/SideNavigation";
 import BookInfo from "./components/Books/BookInfo";
+import CreateMember from "./components/Members/CreateMember";
+import MemberInfo from "./components/Members/MemberInfo";
+import MemberCrudButton from "./components/Members/MemberCrudButton";
+import MemberUpdate from "./components/Members/MemberUpdate";
 
 function App() {
   return (
@@ -20,6 +24,10 @@ function App() {
         <Route path="/crudButton" element={<CrudButton />}></Route>
         <Route path="/sideNavBar" element={<SideNavigation />}></Route>
         <Route path="/bookInfo" element={<BookInfo />}></Route>
+        <Route path="/createMember" element={<CreateMember/>}></Route>
+        <Route path="/memberInfo" element={<MemberInfo/>}></Route>
+        <Route path="/memberCrudButton" element={<MemberCrudButton/>}></Route>
+        <Route path="/memberUpdate" element={<MemberUpdate/>}></Route>
       </Routes>
     </BrowserRouter>
   );
