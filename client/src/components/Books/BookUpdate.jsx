@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import "./Books.css";
 import Button from "react-bootstrap/Button";
@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
 
-const Books = () => {
+const BookUpdate = () => {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -22,9 +22,11 @@ const Books = () => {
             <div className="d-flex justify-content-center ">
               {/* Import Important component folder */}
               <CrudButton />
+
               <br />
             </div>
-            <h1 className="text-center">Add Book</h1>
+            <h1 className="text-center">Update Book</h1>
+
             <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
                 <Form.Control type="text" placeholder="Book Name" />
@@ -74,4 +76,4 @@ const Books = () => {
   );
 };
 
-export default Books;
+export default BookUpdate;

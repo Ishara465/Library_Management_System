@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-import CrudButton from "../importentComponents/CrudButton";
+import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
 import { Container } from "react-bootstrap";
 
@@ -25,37 +25,34 @@ const BookInfo = () => {
 
             {/* Content */}
             <div>
-      <div className="container mt-3">
-        <Table striped bordered hover variant="dark">
-          <tbody>
-            <tr>
-              <th>Book Name</th>
-            </tr>
-            <tr>
-              <th>Book Title</th>
-            </tr>
-            <tr>
-              <th>Author</th>
-            </tr>
-            <tr>
-              <th>ISBN Number</th>
-            </tr>
-            <tr>
-              <th>Category</th>
-            </tr>
-            <tr>
-              <th>Publish Year</th>
-            </tr>
-            <tr></tr>
-          </tbody>
-        </Table>
-      </div>
-    </div>
-            
-            <div className="row">
-             
-                  
+              <div className="container mt-3">
+                <Table striped bordered hover variant="dark">
+                  <tbody>
+                    <tr>
+                      <th>Book Name</th>
+                    </tr>
+                    <tr>
+                      <th>Book Title</th>
+                    </tr>
+                    <tr>
+                      <th>Author</th>
+                    </tr>
+                    <tr>
+                      <th>ISBN Number</th>
+                    </tr>
+                    <tr>
+                      <th>Category</th>
+                    </tr>
+                    <tr>
+                      <th>Publish Year</th>
+                    </tr>
+                    <tr></tr>
+                  </tbody>
+                </Table>
+              </div>
             </div>
+
+            <div className="row"></div>
           </div>
         </div>
       </Container>
