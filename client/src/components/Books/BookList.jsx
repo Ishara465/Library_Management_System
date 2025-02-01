@@ -3,7 +3,7 @@ import "./Books.css";
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import CrudButton from "../importentComponents/CrudButton";
+import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
 import { Link } from "react-router-dom";
 
@@ -39,12 +39,12 @@ const BookList = () => {
                   </Card.Text>
                   <div>
                     <Link to="/bookInfo" className="btn btn-secondary m-1">
-                      Info 
+                      Info
                     </Link>
-                    <Link to="/bookInfo" className="btn btn-warning m-1">
-                     Update
+                    <Link to="/bookUpdate" className="btn btn-warning m-1">
+                      Update
                     </Link>
-                    <Button variant="danger">Delete</Button>
+                    <Button variant="danger" className="m-1">Delete</Button>
                   </div>
                 </Card.Body>
               </Card>
