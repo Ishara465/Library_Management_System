@@ -6,6 +6,9 @@ import Card from "react-bootstrap/Card";
 import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
 import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 
 const BookList = () => {
   return (
@@ -20,14 +23,35 @@ const BookList = () => {
             className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgb(221, 222, 223)" }}
           >
-            <div className="d-flex justify-content-center m-5">
+            <div className="d-flex justify-content-center ">
               {/* Import Important component folder */}
               <CrudButton />
+              {/* Search bar */}
+            <div className="d-flex ms-auto">
+            <Form inline >
+                <Row>
+                  <Col xs="auto">
+                    <Form.Control
+                      type="text"
+                      placeholder="Search Book"
+                      className=" mr-sm-2"
+                    />
+                  </Col>
+                  <Col xs="auto">
+                    <Button type="submit" variant="outline-primary">Submit</Button>
+                  </Col>
+                </Row>
+              </Form>
+            </div>
+
 
               <br />
             </div>
 
+            
             {/* Content */}
+
+            <h1 className="text-center text-decoration-underline">Books List</h1>
             <div className="row ">
               <Card style={{ width: "18rem" }} className="m-2 rounded-3">
                 <Card.Img variant="top" src="holder.js/100px180" />
