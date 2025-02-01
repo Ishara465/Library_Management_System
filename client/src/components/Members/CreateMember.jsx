@@ -27,6 +27,9 @@ const CreateMember = () => {
            
               <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
+              <Form.Control type="text" placeholder="Member ID" />
+              <br />
+
                 <Form.Control type="text" placeholder="Member Name" />
                 <br />
                 <Form.Control type="text" placeholder="Email" />
@@ -34,8 +37,8 @@ const CreateMember = () => {
                 <Form.Control type="text" placeholder="Phone Number" />
                 <br />
                 <Form.Control type="text" placeholder="Address" />
-                <br />
-                <Form.Control type="text" placeholder="Data of Birth " />
+               
+              
               </div>
 
               <div className="col-3 mt-3">
@@ -45,6 +48,9 @@ const CreateMember = () => {
                   placeholder="Published Year"
                   className="mt-1"
                 />
+                <br />
+                <label htmlFor="">Date Of Birth</label>
+                <Form.Control type="date" placeholder="Data of Birth " />
                 <br />
                 <Form.Control type="text" placeholder="References Details" />
                 <br />

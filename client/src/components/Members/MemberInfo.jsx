@@ -29,6 +29,7 @@ const MemberInfo = () => {
                 <thead>
                   <tr>
                     <th>Number</th>
+                    <th>Member ID</th>
                     <th>Member Name</th>
                     <th>Email</th>
                     <th>Phone Number</th>
@@ -41,6 +42,7 @@ const MemberInfo = () => {
                   </tr>
                 </thead>
                 <tbody>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>

@@ -26,6 +26,8 @@ const MemberUpdate = () => {
            
               <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
+              <Form.Control type="text" placeholder="Member ID"  disabled/>
+                <br />
                 <Form.Control type="text" placeholder="Member Name" />
                 <br />
                 <Form.Control type="text" placeholder="Email" />
@@ -33,8 +35,7 @@ const MemberUpdate = () => {
                 <Form.Control type="text" placeholder="Phone Number" />
                 <br />
                 <Form.Control type="text" placeholder="Address" />
-                <br />
-                <Form.Control type="text" placeholder="Data of Birth " />
+                
               </div>
 
               <div className="col-3 mt-3">
@@ -47,7 +48,9 @@ const MemberUpdate = () => {
                 <br />
                 <Form.Control type="text" placeholder="References Details" />
                 <br />
-
+                <label htmlFor="">Date of Birth </label>
+                <Form.Control type="date" placeholder="Data of Birth " />
+                <br />
                 <Form className="">
                   <Form.Group
                     className="mb-3"
