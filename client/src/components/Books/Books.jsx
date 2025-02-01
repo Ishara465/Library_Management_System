@@ -27,6 +27,8 @@ const Books = () => {
             <h1 className="text-center">Add Book</h1>
             <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
+              <Form.Control type="text" placeholder="Book ID" />
+              <br />
                 <Form.Control type="text" placeholder="Book Name" />
                 <br />
                 <Form.Control type="text" placeholder="Title" />
@@ -35,7 +37,7 @@ const Books = () => {
                 <br />
                 <Form.Control type="text" placeholder="ISBN Number" />
                 <br />
-                <Form.Control type="text" placeholder="Category" />
+               
               </div>
 
               <div className="col-3 mt-3">
@@ -49,6 +51,9 @@ const Books = () => {
                 <Form.Control type="text" placeholder="Copies Available" />
                 <br />
 
+                <Form.Control type="text" placeholder="Category" />
+
+<br />
                 <Form className="">
                   <Form.Group
                     className="mb-3"

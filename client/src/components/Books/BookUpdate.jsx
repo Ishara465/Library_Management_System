@@ -7,6 +7,11 @@ import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
 
 const BookUpdate = () => {
+// ! Validation
+
+
+
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -29,7 +34,9 @@ const BookUpdate = () => {
 
             <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
-                <Form.Control type="text" placeholder="Book Name" />
+              <Form.Control type="text" placeholder="Book ID" disabled/>
+                <br />
+                <Form.Control type="text" placeholder="Book Name"  required/>
                 <br />
                 <Form.Control type="text" placeholder="Title" />
                 <br />
@@ -37,7 +44,7 @@ const BookUpdate = () => {
                 <br />
                 <Form.Control type="text" placeholder="ISBN Number" />
                 <br />
-                <Form.Control type="text" placeholder="Category" />
+                
               </div>
 
               <div className="col-3 mt-3">
@@ -49,6 +56,8 @@ const BookUpdate = () => {
                 />
                 <br />
                 <Form.Control type="text" placeholder="Copies Available" />
+                <br />
+                <Form.Control type="text" placeholder="Category" />
                 <br />
 
                 <Form className="">
