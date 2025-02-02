@@ -1,55 +1,58 @@
 import React from 'react'
-import { Container } from "react-bootstrap";
-import SideNavigation from '../importentComponents/SideNavigation';
-import MemberCrudButton from './MemberCrudButton';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
 
-const MemberUpdate = () => {
+import IBCrudButton from './IBCrudButton';
+import SideNavigation from '../../importentComponents/SideNavigation';
+
+const IBookUpdate = () => {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
     {/* Sidebar */}
-    <SideNavigation />
+   <SideNavigation/>
     {/* Main Content */}
     <Container fluid className="p-4">
       <div className="container p-4">
         <div
           className="col-12 p-4 rounded-5 shadow"
-          style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
+          style={{ backgroundColor: "rgba(19, 115, 211, 0)" }}
         >
-          <div className='d-flex justify-content-center'> 
-          <MemberCrudButton/>
-          </div> 
+         <div className="d-flex justify-content-center">
+         <IBCrudButton/>
+         </div>
+         
           <div className="row   d-flex justify-content-center ">
-             {/* Home Body */}
-              <h1 className='text-center' style={{color:"black"}}>Update Member</h1>
-           
-              <div className="row   d-flex justify-content-center  ">
+         
+            {/* Issued Body */}
+            <h1 className="text-center" style={{color:"black"}}>Issued Book Update</h1>
+
+            <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">
-              <Form.Control type="text" placeholder="Member ID"  disabled/>
+                <Form.Control type="text" placeholder="Issue ID" />
                 <br />
-                <Form.Control type="text" placeholder="Member Name" />
+                <Form.Control type="text" placeholder="Book ID" />
                 <br />
-                <Form.Control type="text" placeholder="Email" />
+                <Form.Control type="text" placeholder="Member ID" />
                 <br />
-                <Form.Control type="text" placeholder="Phone Number" />
+                <Form.Control
+                  type="text"
+                  placeholder="ISBN Number For Book"
+                />
                 <br />
-                <Form.Control type="text" placeholder="Address" />
-                
               </div>
 
               <div className="col-3 mt-3">
-                <label htmlFor="">Join Date</label>
+                <label htmlFor="">Due Date</label>
                 <Form.Control
                   type="date"
                   placeholder="Published Year"
                   className="mt-1"
                 />
                 <br />
-                <Form.Control type="text" placeholder="References Details" />
-                <br />
-                <label htmlFor="">Date of Birth </label>
-                <Form.Control type="date" placeholder="Data of Birth " />
+                <label htmlFor="">Return Date</label>
+                <Form.Control type="Date" placeholder="" />
+
                 <br />
                 <Form className="">
                   <Form.Group
@@ -59,7 +62,7 @@ const MemberUpdate = () => {
                     <Form.Control
                       as="textarea"
                       rows={3}
-                      placeholder="About Member"
+                      placeholder="Status"
                     />
                   </Form.Group>
                 </Form>
@@ -70,12 +73,7 @@ const MemberUpdate = () => {
               </div>
             </div>
 
-
-
-
-
-
-            
+            {/* -------------------------------------------------------------- */}
           </div>
         </div>
       </div>
@@ -84,4 +82,4 @@ const MemberUpdate = () => {
   )
 }
 
-export default MemberUpdate
+export default IBookUpdate

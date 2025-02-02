@@ -22,7 +22,7 @@ const BookUpdate = () => {
           {/* Second div */}
           <div
             className="col-12 p-4 rounded-5 shadow"
-            style={{ backgroundColor: "rgb(221, 222, 223)" }}
+            style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
             <div className="d-flex justify-content-center ">
               {/* Import Important component folder */}
@@ -30,7 +30,7 @@ const BookUpdate = () => {
 
               <br />
             </div>
-            <h1 className="text-center text-decoration-underline">Update Book</h1>
+            <h1 className="text-center text-decoration-underline" style={{color:"black"}}>Update Book</h1>
 
             <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">

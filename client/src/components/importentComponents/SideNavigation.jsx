@@ -14,6 +14,8 @@ const SideNavigation = () => {
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/bookList">Books</Nav.Link>
         <Nav.Link href="/memberInfo">Members</Nav.Link>
+        <Nav.Link href="/issuedBook">Issued Book <br />to Members</Nav.Link>
+        <Nav.Link href="/returnBook">Return Book <br />to Members</Nav.Link>
       </Nav>
     </Navbar>
   );
