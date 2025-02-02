@@ -30,10 +30,10 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/books" element={<Books />}></Route>
         <Route path="/bookList" element={<BookList />}></Route>
-        <Route path="/bookUpdate" element={<BookUpdate />}></Route>
+        <Route path="/bookUpdate/:id" element={<BookUpdate />}></Route>
         <Route path="/crudButton" element={<CrudButton />}></Route>
         <Route path="/sideNavBar" element={<SideNavigation />}></Route>
-        <Route path="/bookInfo" element={<BookInfo />}></Route>
+        <Route path="/bookInfo/:id" element={<BookInfo />}></Route>
         <Route path="/createMember" element={<CreateMember />}></Route>
         <Route path="/memberInfo" element={<MemberInfo />}></Route>
         <Route path="/memberCrudButton" element={<MemberCrudButton />}></Route>
