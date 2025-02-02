@@ -1,31 +1,32 @@
-import React from "react";
-import "./Books.css";
+import React from 'react'
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import CrudButton from "./CrudButton";
-import SideNavigation from "../importentComponents/SideNavigation";
+
 import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import IBCrudButton from './IBCrudButton';
+import SideNavigation from '../../importentComponents/SideNavigation';
 
-const BookList = () => {
+const IBookList = () => {
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div>
+      <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
-      <SideNavigation />
+     <SideNavigation/>
       {/* Main Content */}
       <Container fluid className="p-4">
         <div className="container p-4">
           {/* Second div */}
           <div
             className="col-12 p-4 rounded-5 shadow"
-            style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
+            style={{ backgroundColor: "rgba(221, 222, 223, 0.03)" }}
           >
             <div className="d-flex justify-content-center ">
               {/* Import Important component folder */}
-              <CrudButton />
+              <IBCrudButton/>
               {/* Search bar */}
             <div className="d-flex ms-auto">
             <Form inline >
@@ -51,7 +52,7 @@ const BookList = () => {
             
             {/* Content */}
 
-            <h1 className="text-center text-decoration-underline" style={{color:"black"}}>Books List</h1>
+            <h1 className="text-center text-decoration-underline" style={{color:"black"}}>Issued Books List</h1>
             <div className="row ">
               <Card style={{ width: "18rem" }} className="m-2 rounded-3">
                 <Card.Img variant="top" src="holder.js/100px180" />
@@ -62,10 +63,10 @@ const BookList = () => {
                     up the bulk of the card's content.
                   </Card.Text>
                   <div>
-                    <Link to="/bookInfo" className="btn btn-secondary m-1">
+                    <Link to="/iBookInfo" className="btn btn-secondary m-1">
                       Info
                     </Link>
-                    <Link to="/bookUpdate" className="btn btn-warning m-1">
+                    <Link to="/iBookUpdate" className="btn btn-warning m-1">
                       Update
                     </Link>
                     <Button variant="danger" className="m-1">Delete</Button>
@@ -77,7 +78,8 @@ const BookList = () => {
         </div>
       </Container>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default BookList;
+export default IBookList

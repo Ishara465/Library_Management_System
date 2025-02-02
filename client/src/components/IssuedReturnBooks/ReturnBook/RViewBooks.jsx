@@ -1,15 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import SideNavigation from "../importentComponents/SideNavigation";
+import SideNavigation from "../../importentComponents/SideNavigation";
 import Table from "react-bootstrap/Table";
-import MemberCrudButton from "./MemberCrudButton";
+import RBookCrudButton from "./RBookCrudButton";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 
-const MemberInfo = () => {
+const RViewBooks = () => {
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -18,11 +18,13 @@ const MemberInfo = () => {
       <Container fluid className="p-4">
         <div className="container p-4">
           <div
-            className="col-12 p-4 rounded-5 shadow "
+            className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
+            {/* Search bar & crud button*/}
+
             <div className="d-flex justify-content-center">
-              <MemberCrudButton />
+              <RBookCrudButton />
               {/* Search bar */}
               <div className="d-flex ms-auto">
                 <Form inline>
@@ -44,45 +46,46 @@ const MemberInfo = () => {
               </div>
             </div>
 
-            <div className="row  d-flex justify-content-center  m-2">
+            <div className="row   d-flex justify-content-center">
               {/* Home Body */}
-              <h1 className="text-center mb-3" style={{color:"black"}}>Member Info</h1>
+              <h1 className="text-center" style={{ color: "black" }}>
+                View Return Books Info
+              </h1>
 
-              <Table striped bordered hover size="sm">
+              <Table striped bordered hover>
                 <thead>
                   <tr>
-                    <th>Number</th>
+                    <th>#</th>
+                    <th>Return ID</th>
                     <th>Member ID</th>
-                    <th>Member Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Address</th>
-                    <th>Date Of Birth</th>
-                    <th>Join Date</th>
-                    <th>References Details</th>
-                    <th>About Member</th>
-                    <th>Operations</th>
+                    <th>ISBN for Book</th>
+                    <th>Issue Date</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                    <th>Operation</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td>
-                    <div className="d-flex justify-content-center">
-                      <Link to="/memberUpdate" className="btn btn-warning  m-1">
-                        Update
-                      </Link>
-                      <Button className="btn btn-danger  m-1">Delete</Button>
-                    </div>
-                  </td>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <div className="d-flex justify-content-center">
+                        <Link
+                          to="/rBookUpdate"
+                          className="btn btn-warning  m-1"
+                        >
+                          Update
+                        </Link>
+                        <Button className="btn btn-danger  m-1">Delete</Button>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </Table>
             </div>
@@ -93,4 +96,4 @@ const MemberInfo = () => {
   );
 };
 
-export default MemberInfo;
+export default RViewBooks;

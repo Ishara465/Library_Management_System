@@ -16,14 +16,14 @@ const CreateMember = () => {
       <div className="container p-4">
         <div
           className="col-12 p-4 rounded-5 shadow"
-          style={{ backgroundColor: "rgb(221, 222, 223)" }}
+          style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
         >
           <div className='d-flex justify-content-center'> 
           <MemberCrudButton/>
           </div> 
           <div className="row   d-flex justify-content-center ">
              {/* Home Body */}
-              <h1 className='text-center'>Add Member</h1>
+              <h1 className='text-center' style={{color:"black"}}>Add Member</h1>
            
               <div className="row   d-flex justify-content-center  ">
               <div className="col-3 mt-4">

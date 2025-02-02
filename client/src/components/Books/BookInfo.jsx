@@ -16,7 +16,7 @@ const BookInfo = () => {
           {/* Second div */}
           <div
             className="col-12 p-4 rounded-5  shadow"
-            style={{ backgroundColor: "rgb(221, 222, 223)" }}
+            style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
             <div className="d-flex justify-content-center m-2">
               {/* Import Important component folder */}
@@ -27,7 +27,7 @@ const BookInfo = () => {
             {/* Content */}
             <div>
 
-              <h1 className="text-center text-decoration-underline">Book Info</h1>
+              <h1 className="text-center text-decoration-underline" style={{color:"black"}}>Book Info</h1>
               <div className="container mt-3">
                 <Table striped bordered hover variant="dark">
                   <tbody>
