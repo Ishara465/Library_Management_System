@@ -16,7 +16,9 @@ const Books = () => {
   const [isbnNumber, setIsbnNumber] = useState("");
   const [publishYear, setPublishYear] = useState("");
   const [copiesAvailable, setCopiesAvailable] = useState("");
+  const [category, setCategory] = useState("");
   const [bookSummary, setBookSummary] = useState("");
+
  
 
   //! save Book
@@ -43,6 +45,7 @@ const Books = () => {
           author,
           isbnNumber,
           publishYear: new Date(publishYear),
+          category,
           copiesAvailable,
           bookSummary,
         }
@@ -134,7 +137,10 @@ const Books = () => {
                 />
                 <br />
 
-                <Form.Control type="text" placeholder="Category" />
+                <Form.Control type="text" 
+                placeholder="Category"
+                onChange={(e) => setCategory(e.target.value)}               
+                />
 
                 <br />
                 <Form className="">

@@ -37,11 +37,17 @@ const BookList = () => {
 
   // ! Delete Books
   const handleDelete = (id)=>{
+
+    if(window.confirm("Are you sure you want to delete this book? ")){
+
      axios.delete(`http://127.0.0.1:5000/libraryBK/deleteBook/${id}`)
     .then(res => {console.log(res)
       window.location.reload()
     })
     .catch(err => console.log(err))
+  }else{
+    console.log("Book delete canceled")
+  }
   }
 
 
