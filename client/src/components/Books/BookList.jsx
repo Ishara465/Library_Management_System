@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import CrudButton from "./CrudButton";
 import SideNavigation from "../importentComponents/SideNavigation";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -15,6 +15,25 @@ const BookList = () => {
   // State to store books
   
   const [books, setBooks] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  //! handle input change
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  }
+
+  //! Handle from submit
+  const handleSearch = async (e) =>{
+    e.preventDefault();
+
+   if (searchQuery.trim() !== ""){
+    navigate(`/bookSearch/${searchQuery}`)
+   }
+  }
+
+
+
 
   useEffect(() => {
     axios
@@ -69,13 +88,19 @@ const BookList = () => {
               <CrudButton />
               {/* Search bar */}
               <div className="d-flex ms-auto">
-                <Form inline>
+                <Form inline onSubmit={handleSearch}>
                   <Row>
                     <Col xs="auto">
-                      <Form.Control type="text" placeholder="Search Book" className="mr-sm-2" />
+                      <Form.Control type="text" 
+                      placeholder="Search Book" 
+                      className="mr-sm-2" 
+                      value={searchQuery}
+                      onChange={handleChange}
+                      />
                     </Col>
                     <Col xs="auto">
-                      <Button type="submit" variant="outline-primary">
+                      <Button type="submit" className="btn btn-primary"
+                      >
                         Submit
                       </Button>
                     </Col>
