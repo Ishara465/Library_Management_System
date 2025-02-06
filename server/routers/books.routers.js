@@ -99,5 +99,24 @@ router.get("/libraryBk/getBookID/:id",(req,res)=>{
     })
 })
 
+// ! Get Book By Name
+router.get("/libraryBk/getBookByName/:name",async(req,res)=>{
+    const bookName = req.params.name;
+
+   try{
+    const books = await bookMg.find({bookName: {$regex: new RegExp(bookName,"i")}});
+
+    if(books.length === 0){
+            return res.status(404).json({error: "No books found with that name"})
+    }
+    res.json(books);
+   }
+   catch(err){
+    console.error("Error fetching books ",err);
+    res.status(500).json({error: "Server error"})
+   }
+})
+
+
 
 module.exports = router;
