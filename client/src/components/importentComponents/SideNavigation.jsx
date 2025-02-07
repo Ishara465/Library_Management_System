@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-import { FaHome, FaBook, FaUsers, FaBookOpen, FaUndo } from 'react-icons/fa';
+import { FaHome, FaBook, FaUsers, FaBookOpen, FaUndo } from "react-icons/fa";
 
 const SideNavigation = () => {
   return (
@@ -12,25 +12,33 @@ const SideNavigation = () => {
     >
       <Navbar.Brand href="#home">Dashboard</Navbar.Brand>
       <Nav className="flex-column">
-      
         <Nav.Link href="/">
-        <FaHome style={{ marginRight: '8px' }} />
-        Home</Nav.Link>   
+          <FaHome style={{ marginRight: "8px" }} />
+          Home
+        </Nav.Link>
 
         <Nav.Link href="/bookList">
-        <FaBook style={{ marginRight: '8px' }} />Books</Nav.Link>
+          <FaBook style={{ marginRight: "8px" }} />
+          Books
+        </Nav.Link>
 
         <Nav.Link href="/memberInfo">
-        <FaUsers style={{ marginRight: '8px' }} />Members</Nav.Link>
+          <FaUsers style={{ marginRight: "8px" }} />
+          Members
+        </Nav.Link>
 
         <Nav.Link href="/issuedBook">
-        <FaBookOpen style={{ marginRight: '8px' }} />Issued Book <br />to Members</Nav.Link>
+          <FaBookOpen style={{ marginRight: "8px" }} />
+          Issued Book <br />
+          to Members
+        </Nav.Link>
 
         <Nav.Link href="/returnBook">
-        <FaUndo style={{ marginRight: '8px' }} />Return Book <br />to Members</Nav.Link>
+          <FaUndo style={{ marginRight: "8px" }} />
+          Return Book <br />
+          to Members
+        </Nav.Link>
       </Nav>
-
-      
     </Navbar>
   );
 };
