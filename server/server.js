@@ -9,6 +9,7 @@ const app = express();
 
 // import routers
 const book = require("./routers/books.routers")
+const member = require("./routers/member.routers")
 
 
 // Middleware
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // use routers
 app.use(book);
+app.use(member)
 
 
 // connect to mongodb port and link
