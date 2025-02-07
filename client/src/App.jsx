@@ -23,6 +23,7 @@ import RViewBooks from "./components/IssuedReturnBooks/ReturnBook/RViewBooks";
 import RBookUpdate from "./components/IssuedReturnBooks/ReturnBook/RBookUpdate";
 import BookSearch from "./components/Books/BookSearch";
 import MemberSearch from "./components/Members/MemberSearch";
+import IBookSearch from "./components/IssuedReturnBooks/IssuedBook/IBookSearch";
 
 function App() {
   return (
@@ -45,8 +46,9 @@ function App() {
         <Route path="/issuedBook" element={<IssuedBooks />}></Route>
         <Route path="/returnBook" element={<ReturnBooks />}></Route>
         <Route path="/iBookList" element={<IBookList />}></Route>
-        <Route path="/iBookInfo" element={<IBookInfo />}></Route>
-        <Route path="/iBookUpdate" element={<IBookUpdate />}></Route>
+        <Route path="/iBookInfo/:id" element={<IBookInfo />}></Route>
+        <Route path="/iBookUpdate/:id" element={<IBookUpdate />}></Route>
+        <Route path="/iBookSearch/:issueId" element={<IBookSearch />}></Route>
         <Route path="/rBookCrudButton" element={<RBookCrudButton />}></Route>
         <Route path="/rViewBooks" element={<RViewBooks />}></Route>
         <Route path="/rBookUpdate" element={<RBookUpdate />}></Route>
