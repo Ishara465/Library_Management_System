@@ -28,7 +28,7 @@ const BookUpdate = () => {
       .then((result) => {
         console.log("Fetched Book: ", result.data);
         setBook(result.data);
-        setBookId(result.data.bookId);  // Set initial state with fetched data
+        setBookId(result.data.bookId); // Set initial state with fetched data
         setBookName(result.data.bookName);
         setTitle(result.data.title);
         setAuthor(result.data.author);
@@ -87,11 +87,13 @@ const BookUpdate = () => {
             className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
-            <div className="d-flex justify-content-center ">
-              <CrudButton />
-              <br />
-            </div>
-            <h1 className="text-center text-decoration-underline" style={{ color: "black" }}>
+            <CrudButton />
+            <br />
+
+            <h1
+              className="text-center text-decoration-underline"
+              style={{ color: "black" }}
+            >
               Update Book
             </h1>
 

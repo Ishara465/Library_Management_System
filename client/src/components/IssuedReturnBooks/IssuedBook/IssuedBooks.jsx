@@ -69,9 +69,7 @@ const IssuedBooks = () => {
             className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
-            <div className="d-flex justify-content-center">
-              <IBCrudButton />
-            </div>
+            <IBCrudButton />
 
             <div className="row   d-flex justify-content-center ">
               {/* Issued Body */}

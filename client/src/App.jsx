@@ -25,13 +25,15 @@ import BookSearch from "./components/Books/BookSearch";
 import MemberSearch from "./components/Members/MemberSearch";
 import IBookSearch from "./components/IssuedReturnBooks/IssuedBook/IBookSearch";
 import RBookSearch from "./components/IssuedReturnBooks/ReturnBook/RBookSearch";
+import Login from "./components/LoginReg/Login";
+import Register from "./components/LoginReg/Register";
 
 function App() {
   return (
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/books" element={<Books />}></Route>
         <Route path="/bookList" element={<BookList />}></Route>
         <Route path="/bookUpdate/:id" element={<BookUpdate />}></Route>
@@ -54,6 +56,8 @@ function App() {
         <Route path="/rViewBooks" element={<RViewBooks />}></Route>
         <Route path="/rBookUpdate/:id" element={<RBookUpdate />}></Route>
         <Route path="/rBookSearch/:returnId" element={<RBookSearch />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Register />}></Route>
       </Routes>
     </BrowserRouter>
   );

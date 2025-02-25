@@ -84,9 +84,8 @@ const MemberUpdate = () => {
             className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
-            <div className="d-flex justify-content-center">
-              <MemberCrudButton />
-            </div>
+            <MemberCrudButton />
+
             <div className="row   d-flex justify-content-center ">
               {/* Home Body */}
               <h1 className="text-center" style={{ color: "black" }}>

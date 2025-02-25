@@ -4,6 +4,7 @@ import SideNavigation from "../../importentComponents/SideNavigation";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Table from "react-bootstrap/Table";
+import IBCrudButton from "./IBCrudButton";
 
 const IBookSearch = () => {
   const { issueId } = useParams();
@@ -54,6 +55,7 @@ const IBookSearch = () => {
             className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgb(221, 222, 223)" }}
           >
+            <IBCrudButton />
             <div className="row d-flex justify-content-center mt-5">
               {/* Home Body */}
               <h1>Search for Issue Book Issue Id - {issueBook.issueId}</h1>

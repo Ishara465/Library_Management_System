@@ -48,6 +48,21 @@ const RViewBooks = () => {
       });
   }, []);
 
+  // ! Delete Books
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this book? ")) {
+      axios
+        .delete(`http://127.0.0.1:5000/libraryBK/deleteReturnBook/${id}`)
+        .then((res) => {
+          console.log(res);
+          window.location.reload();
+        })
+        .catch((err) => console.log(err));
+    } else {
+      console.log("Book delete canceled");
+    }
+  };
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -123,7 +138,10 @@ const RViewBooks = () => {
                             >
                               Update
                             </Link>
-                            <Button className="btn btn-danger  m-1">
+                            <Button
+                              className="btn btn-danger  m-1"
+                              onClick={() => handleDelete(returnBook._id)}
+                            >
                               Delete
                             </Button>
                           </div>

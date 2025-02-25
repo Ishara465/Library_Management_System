@@ -10,6 +10,7 @@ const book = require("./routers/books.routers");
 const member = require("./routers/member.routers");
 const issueBook = require("./routers/issueBook.routers");
 const returnBook = require("./routers/returnBook.routers");
+const loginReg = require("./routers/loginAdmin.router");
 
 // Middleware
 app.use(bodyParser.json());
@@ -21,6 +22,7 @@ app.use(book);
 app.use(member);
 app.use(issueBook);
 app.use(returnBook);
+app.use(loginReg);
 
 // connect to mongodb port and link
 const PORT = 5000;

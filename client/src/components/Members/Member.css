@@ -1,0 +1,29 @@
+/* Custom button group styling */
+.custom-button-group {
+  gap: 10px; /* Space between buttons */
+}
+
+/* Base button styling */
+.custom-button {
+  padding: 8px 10px; /* Adjust padding for shape */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #007bff; /* Border color */
+  background-color: transparent; /* Transparent background */
+  color: #007bff; /* Text color */
+  text-decoration: none; /* Remove underline for Link */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.custom-button:hover {
+  background-color: #007bff; /* Background color on hover */
+  color: white; /* Text color on hover */
+}
+
+/* Selected button styling */
+.selected-button {
+  background-color: #007bff; /* Background color for selected button */
+  color: white; /* Text color for selected button */
+  border-color: #007bff; /* Border color for selected button */
+}
