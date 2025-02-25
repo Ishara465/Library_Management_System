@@ -1,0 +1,35 @@
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 4rem;
+  border-radius: 20px;
+}
+
+/* Call to Action Section */
+.cta-section {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  padding: 4rem;
+  border-radius: 20px;
+}
+
+/* Card Hover Effect */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Display Text */
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Button Icons */
+.btn svg {
+  margin-right: 8px;
+}
