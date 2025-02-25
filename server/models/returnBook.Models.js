@@ -17,10 +17,6 @@ const ReturnBook = new mongoose.Schema({
     type: String,
     required: true,
   },
-  isbnNumber: {
-    type: String,
-    required: true,
-  },
   memberId: {
     type: String,
     required: true,

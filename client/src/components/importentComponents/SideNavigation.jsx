@@ -29,14 +29,12 @@ const SideNavigation = () => {
 
         <Nav.Link href="/issuedBook">
           <FaBookOpen style={{ marginRight: "8px" }} />
-          Issued Book <br />
-          to Members
+          Issued Book
         </Nav.Link>
 
         <Nav.Link href="/returnBook">
           <FaUndo style={{ marginRight: "8px" }} />
-          Return Book <br />
-          to Members
+          Return Book
         </Nav.Link>
       </Nav>
     </Navbar>

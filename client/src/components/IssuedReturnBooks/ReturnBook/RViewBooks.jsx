@@ -1,15 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import SideNavigation from "../../importentComponents/SideNavigation";
 import Table from "react-bootstrap/Table";
 import RBookCrudButton from "./RBookCrudButton";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import axios from "axios";
 
 const RViewBooks = () => {
+  const [returnBook, setReturnBook] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  //? handle input change
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  //? handle from submit
+  const handleSearch = async (e) => {
+    e.preventDefault();
+
+    if (searchQuery.trim() !== "") {
+      navigate(`/rBookSearch/${searchQuery}`);
+    }
+  };
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:5000/libraryBK/getAllReturnBooks")
+      .then((response) => {
+        console.log("API Response: ", response.data);
+
+        if (response.data.success & Array.isArray(response.data.content)) {
+          setReturnBook(response.data.content);
+        } else {
+          console.error("Unexpected data structure ", response.data);
+          setReturnBook([]);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching books ", error);
+        setReturnBook([]);
+      });
+  }, []);
+
   return (
     <div style={{ display: "flex", height: "100vh" }}>
       {/* Sidebar */}
@@ -27,13 +65,15 @@ const RViewBooks = () => {
               <RBookCrudButton />
               {/* Search bar */}
               <div className="d-flex ms-auto">
-                <Form inline>
+                <Form inline onSubmit={handleSearch}>
                   <Row>
                     <Col xs="auto">
                       <Form.Control
                         type="text"
                         placeholder="Search Member"
                         className=" mr-sm-2"
+                        value={searchQuery}
+                        onChange={handleChange}
                       />
                     </Col>
                     <Col xs="auto">
@@ -52,42 +92,49 @@ const RViewBooks = () => {
                 View Return Books Info
               </h1>
 
-              <Table striped bordered hover>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Return ID</th>
-                    <th>Member ID</th>
-                    <th>ISBN for Book</th>
-                    <th>Issue Date</th>
-                    <th>Return Date</th>
-                    <th>Status</th>
-                    <th>Operation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <div className="d-flex justify-content-center">
-                        <Link
-                          to="/rBookUpdate"
-                          className="btn btn-warning  m-1"
-                        >
-                          Update
-                        </Link>
-                        <Button className="btn btn-danger  m-1">Delete</Button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
+              {returnBook.length > 0 ? (
+                returnBook.map((returnBook, index) => (
+                  <Table striped bordered hover key={index}>
+                    <thead>
+                      <tr>
+                        <th>Return ID</th>
+                        <th>Member ID</th>
+                        <th>ISBN for Book</th>
+                        <th>Issue Date</th>
+                        <th>Return Date</th>
+                        <th>Status</th>
+                        <th>Operation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{returnBook.returnId}</td>
+                        <td>{returnBook.memberId}</td>
+                        <td>{returnBook.isbnNumber}</td>
+                        <td>{returnBook.issueDate}</td>
+                        <td>{returnBook.returnDate}</td>
+                        <td>{returnBook.status}</td>
+
+                        <td>
+                          <div className="d-flex justify-content-center">
+                            <Link
+                              to={`/rBookUpdate/${returnBook._id}`}
+                              className="btn btn-warning  m-1"
+                            >
+                              Update
+                            </Link>
+                            <Button className="btn btn-danger  m-1">
+                              Delete
+                            </Button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                ))
+              ) : (
+                <p className="text-center">No return Books are available</p>
+              )}
             </div>
           </div>
         </div>
