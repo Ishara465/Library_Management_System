@@ -1,21 +1,48 @@
-import React from 'react'
+import React, { useState } from "react";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const IBCrudButton = () => {
+const CrudButton = () => {
+  const [selectedButton, setSelectedButton] = useState(null);
+  const location = useLocation();
+
+  const handleButtonClick = (buttonName) => {
+    setSelectedButton(buttonName);
+  };
+
   return (
     <div>
-      <ButtonGroup className="mb-2">
-        <Link to="/iBookList" className="btn btn-primary">
-          View List Of Issue Books
+      <ButtonGroup className="mb-2 custom-button-group">
+        {/* View List of Books Button */}
+        <Link
+          to="/iBookList"
+          className={`btn custom-button ${
+            selectedButton === "viewList" || location.pathname === "/iBookList"
+              ? "selected-button"
+              : ""
+          }`}
+          onClick={() => handleButtonClick("viewList")}
+        >
+          View All Issue Books
         </Link>
-        <Button as={Link} to="/issuedBook" variant="outline-primary">
+
+        {/* Add Books Button */}
+        <Button
+          as={Link}
+          to="/issuedBook"
+          className={`custom-button ${
+            selectedButton === "addBooks" || location.pathname === "/issuedBook"
+              ? "selected-button"
+              : ""
+          }`}
+          onClick={() => handleButtonClick("addIssueBook")}
+        >
           Add Issue Book
-        </Button>     
+        </Button>
       </ButtonGroup>
     </div>
-  )
-}
+  );
+};
 
-export default IBCrudButton
+export default CrudButton;

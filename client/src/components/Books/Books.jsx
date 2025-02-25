@@ -19,21 +19,27 @@ const Books = () => {
   const [category, setCategory] = useState("");
   const [bookSummary, setBookSummary] = useState("");
 
- 
-
   //! save Book
   const Submit = async (e) => {
     e.preventDefault();
 
-    if(!bookId || !bookName || !title || !author || !isbnNumber || !publishYear || !copiesAvailable || !bookSummary){
-      alert("All fields are required! Please fill Out all fields")
+    if (
+      !bookId ||
+      !bookName ||
+      !title ||
+      !author ||
+      !isbnNumber ||
+      !publishYear ||
+      !copiesAvailable ||
+      !bookSummary
+    ) {
+      alert("All fields are required! Please fill Out all fields");
       return;
     }
 
-    if (isNaN(parseInt(copiesAvailable))|| parseInt(copiesAvailable)<=0){
-      alert("Copies Available must be a positive number")
+    if (isNaN(parseInt(copiesAvailable)) || parseInt(copiesAvailable) <= 0) {
+      alert("Copies Available must be a positive number");
     }
-
 
     try {
       const response = await axios.post(
@@ -75,12 +81,10 @@ const Books = () => {
             className="col-12 p-4 rounded-5 shadow"
             style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
           >
-            
-            <div className="d-flex justify-content-center ">
-              {/* Import Important component folder */}
-              <CrudButton />
-              <br />
-            </div>
+            {/* Import Important component folder */}
+            <CrudButton />
+            <br />
+
             <h1
               className="text-center text-decoration-underline"
               style={{ color: "black" }}
@@ -137,9 +141,10 @@ const Books = () => {
                 />
                 <br />
 
-                <Form.Control type="text" 
-                placeholder="Category"
-                onChange={(e) => setCategory(e.target.value)}               
+                <Form.Control
+                  type="text"
+                  placeholder="Category"
+                  onChange={(e) => setCategory(e.target.value)}
                 />
 
                 <br />

@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import SideNavigation from "../importentComponents/SideNavigation";
 import { Container } from "react-bootstrap";
 import axios from "axios";
+import CrudButton from "./CrudButton";
 
 const BookInfo = () => {
   const { id } = useParams(); // Get the book ID from the URL
@@ -28,8 +29,15 @@ const BookInfo = () => {
       <SideNavigation />
       <Container fluid className="p-4">
         <div className="container p-4">
-          <div className="col-12 p-4 rounded-5 shadow" style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}>
-            <h1 className="text-center text-decoration-underline" style={{ color: "black" }}>
+          <div
+            className="col-12 p-4 rounded-5 shadow"
+            style={{ backgroundColor: "rgba(221, 222, 223, 0)" }}
+          >
+            <CrudButton />
+            <h1
+              className="text-center text-decoration-underline"
+              style={{ color: "black" }}
+            >
               Book Info - {book.bookName}
             </h1>
 
@@ -70,8 +78,6 @@ const BookInfo = () => {
                     <th>Summary</th>
                     <td>{book.bookSummary}</td>
                   </tr>
-
-                  
                 </tbody>
               </Table>
             </div>

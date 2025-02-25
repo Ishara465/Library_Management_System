@@ -35,11 +35,9 @@ const IBookInfo = () => {
             className="col-12 p-4 rounded-5  shadow"
             style={{ backgroundColor: "rgba(167, 167, 167, 0)" }}
           >
-            <div className="d-flex justify-content-center m-2">
-              {/* Import Important component folder */}
-              <IBCrudButton />
-              <br />
-            </div>
+            {/* Import Important component folder */}
+            <IBCrudButton />
+            <br />
 
             {/* Content */}
             <div>

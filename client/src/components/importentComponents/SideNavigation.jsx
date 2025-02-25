@@ -10,9 +10,9 @@ const SideNavigation = () => {
       className="flex-column p-3"
       style={{ width: "250px", minHeight: "100vh" }}
     >
-      <Navbar.Brand href="#home">Dashboard</Navbar.Brand>
+      <Navbar.Brand href="/home">Dashboard</Navbar.Brand>
       <Nav className="flex-column">
-        <Nav.Link href="/">
+        <Nav.Link href="/home">
           <FaHome style={{ marginRight: "8px" }} />
           Home
         </Nav.Link>
